@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "axios": "^1.13.2",
+    "body-parser": "^2.2.1",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  },
+  "name": "eventbus",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
