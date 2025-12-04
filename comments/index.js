@@ -41,6 +41,12 @@ app.post("/posts/:id/comments", async (req, res) => {
   return res.send(comments);
 });
 
+// receive event from eventbus
+app.post("/events", (req, res) => {
+  console.log("Received Event", req.body.type);
+  res.send({});
+});
+
 app.listen(5000, () => {
   console.log("Listening on 5000");
 });
