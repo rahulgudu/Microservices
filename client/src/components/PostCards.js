@@ -1,10 +1,9 @@
-
 import React from "react";
 import { Card } from "react-bootstrap";
 import CreateComment from "../CreateComment";
 import CommentList from "../CommentList";
 
-const PostCard = ({ id, title, content }) => {
+const PostCard = ({ id, title, content, comments }) => {
   return (
     <Card className="h-100 shadow-lg border-0 rounded-3 hover-shadow transition">
       {/* Card Header */}
@@ -16,15 +15,18 @@ const PostCard = ({ id, title, content }) => {
       <Card.Body className="bg-light">
         <Card.Text
           className="text-dark mb-4"
-          style={{ whiteSpace: "pre-wrap", fontSize: "1rem", lineHeight: "1.5" }}
-        >
+          style={{
+            whiteSpace: "pre-wrap",
+            fontSize: "1rem",
+            lineHeight: "1.5",
+          }}>
           {content}
         </Card.Text>
 
         {/* Comments Section */}
         <div className="mb-3">
           <h6 className="fw-semibold text-secondary mb-2">Comments</h6>
-          <CommentList postId={id} />
+          <CommentList comments={comments} />
         </div>
 
         {/* Create Comment Form */}
