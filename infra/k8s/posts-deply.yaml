@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: posts
-          image: sushantskb/microservices:posts-v1
+          image: sushantskb/microservices:posts-latest # generally here it should be microservices:latest but since I am maintaining multiple versions of the same microservice, I have used a different tag for each version....
