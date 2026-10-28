@@ -15,3 +15,17 @@ spec:
       containers:
         - name: posts
           image: sushantskb/microservices:posts-latest # generally here it should be microservices:latest but since I am maintaining multiple versions of the same microservice, I have used a different tag for each version....
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name:  posts-clusterip-srv
+spec:
+  selector:
+    app: posts
+  type: ClusterIP
+  ports: 
+    - name: posts
+      protocol: TCP
+      port: 4000
+      targetPort: 4000

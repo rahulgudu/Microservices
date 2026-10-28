@@ -15,3 +15,17 @@ spec:
       containers:
         - name: event-bus
           image: sushantskb/microservices:eventbus-v1 # generally here it should be microservices:latest but since I am maintaining multiple versions of the same microservice, I have used a different tag for each version....
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: event-bus-srv
+spec:
+  selector:
+    app: event-bus
+  type: ClusterIP
+  ports: 
+    - name: event-bus
+      protocol: TCP
+      port: 7000
+      targetPort: 7000
