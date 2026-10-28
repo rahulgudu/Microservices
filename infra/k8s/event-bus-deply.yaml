@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: event-bus-depl
+spec: 
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: event-bus
+  template:
+    metadata:
+      labels:
+        app: event-bus 
+    spec:
+      containers:
+        - name: event-bus
+          image: sushantskb/microservices:eventbus-v1 # generally here it should be microservices:latest but since I am maintaining multiple versions of the same microservice, I have used a different tag for each version....
