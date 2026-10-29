@@ -27,7 +27,7 @@ app.post("/posts", async (req, res) => {
   };
 
   // triggering eventbus to publish an event
-  await axios.post("http://localhost:7000/events", {
+  await axios.post("http://event-bus-srv:7000/events", {
     type: "PostCreated",
     data: {
       id,
