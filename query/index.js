@@ -49,7 +49,7 @@ app.post("/events", (req, res) => {
 app.listen(6080, async () => {
   console.log("Listening on 6080");
   try {
-    const res = await axios.get("http://localhost:7000/events");
+    const res = await axios.get("http://event-bus-srv:7000/events");
 
     for (let event of res.data) {
       console.log("Processing event:", event.type);
