@@ -15,15 +15,21 @@ app.post("/events", (req, res) => {
   });
 
 
-  // axios.post("http://localhost:5000/events", event).catch((err) => {
-  //   console.log(err.message);
-  // });
-  // axios.post("http://localhost:6080/events", event).catch((err) => {
-  //   console.log(err.message);
-  // });
-  // axios.post("http://localhost:8000/events", event).catch((err) => {
-  //   console.log(err.message);
-  // });
+  //comments service
+  axios.post("http://comments-srv:5000/events", event).catch((err) => {
+    console.log(err.message);
+  });
+
+
+  // query service
+  axios.post("http://query-srv:6080/events", event).catch((err) => {
+    console.log(err.message);
+  });
+
+  // moderation service
+  axios.post("http://moderation-srv:8000/events", event).catch((err) => {
+    console.log(err.message);
+  });
 
 
   // axios.post("http://localhost:4000/events", event);
