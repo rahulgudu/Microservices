@@ -5,7 +5,7 @@ const CreateComment = ({ postId }) => {
   const [content, setContent] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    axios.post(`http://localhost:5000/posts/${postId}/comments`, {
+    axios.post(`http://posts.com/posts/${postId}/comments`, {
       content,
     });
     setContent("");
