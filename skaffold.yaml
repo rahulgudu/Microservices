@@ -15,7 +15,7 @@ build:
       sync:
         manual:
           - src: "src/**/*.js"
-            dest: .
+            dest: /app
 
     - image: sushantskb/microservices/comments
       context: comments
