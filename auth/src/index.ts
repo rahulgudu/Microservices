@@ -5,6 +5,7 @@ import { currentUserRouter } from "./routes/current-user.js";
 import { signinRouter } from "./routes/signin.js";
 import { signoutRouter } from "./routes/signout.js";
 import { signupRouter } from "./routes/signup.js";
+import { errorHandler } from "./middleware/error-handler.js";
 
 const app = express();
 app.use(json());
@@ -13,6 +14,7 @@ app.use(currentUserRouter);
 app.use(signinRouter);
 app.use(signoutRouter);
 app.use(signupRouter);
+app.use(errorHandler);
 
 app.all("*", async (req, res) => {
     res.send("Not Found");
